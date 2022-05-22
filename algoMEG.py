@@ -17,7 +17,6 @@ def megpp(A, b):
 
 	for k in range(0, n - 1):
 		l = max(list(zip(map(abs, A[k:, k]), range(k, n))))[1]
-
 		if k != l:
 			aux = np.copy(A[k])
 			A[k] = np.copy(A[l])
