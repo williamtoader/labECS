@@ -23,8 +23,13 @@ def step(A):
 		L[i][0] = A[i][0] / A[0][0]
 		U[0][i] = A[0][i]
 
-	S = A[1:, 1:] - (np.multiply(np.array([A[1:, 0]]).T, np.array([A[0, 1:]]))) / A[0][0]
-	return (S, L, U)
+	S = A[1:, 1:] - (
+		np.multiply(
+			np.array([A[1:, 0]]).T,
+			np.array([A[0, 1:]])
+		)
+	) / A[0][0]
+	return S, L, U
 
 def lufp(A):
 	A = np.copy(A)
